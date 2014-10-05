@@ -1,0 +1,45 @@
+bin
+obj
+packages
+*.suo
+*.user
+*.dbmdl
+*.schemaview
+*.orig-rdn
+*.crunchsolution.cache
+
+# Numerous always-ignore extensions
+*.diff
+*.err
+*.log
+*.orig
+*.rej
+*.sass-cache
+*.swo
+*.swp
+*.vi
+*~
+*.css*
+
+# OS or Editor folders
+.cache
+.css
+.DS_Store
+.project
+.settings
+.tmproj
+nbproject
+npm-debug.log
+Thumbs.db
+
+# Folders to ignore
+.tmp
+bower_components
+dist
+gh-pages
+node_modules
+temp
+tmp
+vendor
+core-*
+platform*
