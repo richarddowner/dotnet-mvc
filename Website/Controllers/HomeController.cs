@@ -1,4 +1,6 @@
-﻿using System.Web.Mvc;
+﻿using System.Linq;
+using System.Web.Mvc;
+using Dapper;
 using Website.Connections;
 using Website.Models;
 
@@ -11,9 +13,15 @@ namespace Website.Controllers
         {
             using (var conn = new MyDbConnection().Open())
             {
-                var sql = @"select * from todo";
+                const string sql = @"select * from todo where blah = @Blah";
                 
-                // conn.Query ?
+                var result = conn.Query<string>(
+                    sql:sql,
+                    param: new
+                    {
+                        @Blah = "hi"
+                    }
+                ).ToList();
             }
 
             var viewModel = new IndexViewModel
