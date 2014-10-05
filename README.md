@@ -1,3 +1,5 @@
 dotnet-mvc
 ==========
-Bare bones MVC app using Attribute Routing
+Bare bones MVC app. Using: 
+* Attribute Routing
+* PostgreSQL
