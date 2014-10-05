@@ -13,10 +13,8 @@ namespace Website.Controllers
         {
             using (var conn = new MyDbConnection().Open())
             {
-                const string sql = @"select * from todo where blah = @Blah";
-                
                 var result = conn.Query<string>(
-                    sql:sql,
+                    sql: @"select * from todo where blah = @Blah",
                     param: new
                     {
                         @Blah = "hi"
