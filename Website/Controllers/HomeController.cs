@@ -2,6 +2,7 @@
 using System.Web.Mvc;
 using Dapper;
 using Website.Connections;
+using Website.Data.Entities;
 using Website.Models;
 
 namespace Website.Controllers
@@ -13,21 +14,18 @@ namespace Website.Controllers
         {
             using (var conn = new MyDbConnection().Open())
             {
-                var result = conn.Query<string>(
-                    sql: @"select * from todo where blah = @Blah",
-                    param: new
-                    {
-                        @Blah = "hi"
-                    }
+                var users = conn.Query<Users>(
+                    sql: @"select * from Users;"
                 ).ToList();
+                
+                var viewModel = new IndexViewModel
+                {
+                    Name = "My Website",
+                    Users = users
+                };
+
+                return View(viewModel);
             }
-
-            var viewModel = new IndexViewModel
-            {
-                Name = "My Website"
-            };
-
-            return View(viewModel);
         }
     }
 }

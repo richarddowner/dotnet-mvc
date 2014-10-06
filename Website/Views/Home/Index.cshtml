@@ -8,3 +8,27 @@
 <h2>@Model.Name</h2>
 
 <p>Yo this is some words</p>
+
+<table border="1">
+    <tr>
+        <td>PersonId</td>
+        <td>LastName</td>
+        <td>FirstName</td>
+        <td>Address</td>
+        <td>City</td>
+    </tr>
+@foreach (var user in Model.Users)
+{
+    <tr>
+        <td>@user.PersonID</td>
+        <td>@user.LastName</td>
+        <td>@user.FirstName</td>
+        <td>@user.Address</td>
+        <td>@user.City</td>
+    </tr>
+}
+@if (Model.Users.Count == 0)
+{
+    <tr><td rowspan="5">No users</td></tr>
+}
+</table>

@@ -98,6 +98,7 @@
     <Compile Include="Connections\BaseConnection.cs" />
     <Compile Include="Connections\MyDbConnection.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Data\Entities\Users.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
