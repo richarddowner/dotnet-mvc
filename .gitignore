@@ -1,6 +1,7 @@
 bin
 obj
 packages
+properties
 *.suo
 *.user
 *.dbmdl
