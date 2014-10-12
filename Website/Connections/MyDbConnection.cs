@@ -2,7 +2,7 @@
 
 namespace Website.Connections
 {
-    public class MyDbConnection : BaseConnection
+    public class MyDbConnection : PostgreSqlConnectionBase
     {
         public override IDbConnection Open()
         {

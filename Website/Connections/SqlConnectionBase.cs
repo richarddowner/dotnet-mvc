@@ -1,11 +1,11 @@
 ﻿using System;
 using System.Configuration;
 using System.Data;
-using Npgsql;
+using System.Data.SqlClient;
 
 namespace Website.Connections
 {
-    public abstract class BaseConnection
+    public abstract class SqlConnectionBase
     {
         public abstract IDbConnection Open();
 
@@ -18,11 +18,11 @@ namespace Website.Connections
                 throw new Exception(string.Format("Connectiong string '{0}' was missing", name));
             }
 
-            var conn = new NpgsqlConnection(settings.ConnectionString);
+            var conn = new SqlConnection(settings.ConnectionString);
 
             conn.Open();
 
             return conn;
-        }
+        } 
     }
 }
